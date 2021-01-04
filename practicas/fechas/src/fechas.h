@@ -13,7 +13,7 @@ class fecha{
     public:
         fecha(int, int, int, int);
         void decir(ofstream& archivo);
-        void biciesto(ofstream& archivo);
+        void bisiesto(ofstream& archivo);
         void siguientes(ofstream& archivo);
 
 
