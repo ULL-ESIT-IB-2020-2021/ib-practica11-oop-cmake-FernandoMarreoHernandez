@@ -27,12 +27,12 @@ fecha::fecha(int day, int month, int year, int repeat){
 void fecha::decir(ofstream& archivo){
     archivo<< "hoy es: " << dia << "/" << mes << "/" << anio <<endl;
 }
-void fecha::biciesto(ofstream& archivo){
+void fecha::bisiesto(ofstream& archivo){
     if(anio % 4 == 0){
-        archivo << "el año es biciesto"<<endl;
+        archivo << "el año es bisiesto"<<endl;
     }
     else{
-        archivo << "el año no es biciesto"<<endl;
+        archivo << "el año no es bisiesto"<<endl;
     }
 
 }

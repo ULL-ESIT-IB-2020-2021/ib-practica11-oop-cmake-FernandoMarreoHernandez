@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
         int repeat_ = atoi(argv[4]);
         fecha hoy(day_,month_,year_,repeat_);
         hoy.decir(archivo);
-        hoy.biciesto(archivo);
+        hoy.bisiesto(archivo);
         hoy.siguientes(archivo);
         archivo.close();//cierra el txt
         
