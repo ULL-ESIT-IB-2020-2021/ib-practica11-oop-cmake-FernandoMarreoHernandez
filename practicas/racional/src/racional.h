@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+#pragma once
+#ifndef CLASSES_FUNCTIONS_COMPLEX_H
+#define CLASSES_FUNCTIONS_COMPLEX_H
 using namespace std;
 
 
@@ -55,3 +58,4 @@ void racional::div(ofstream& archivo){
     divdeno = deno1 * nume2;
     archivo<<nume1<<"/"<<deno1<<" / "<<nume2<<"/"<<deno2<<" = "<<divnume<<"/"<<divdeno<<endl;
 }
+#endif

@@ -1,4 +1,7 @@
 #include <iostream>
+#pragma once
+#ifndef CLASSES_FUNCTIONS_COMPLEX_H
+#define CLASSES_FUNCTIONS_COMPLEX_H
 
 using namespace std;
 
@@ -39,3 +42,4 @@ void complejo::resta(){
     restaimaginaria = imaginaria1 - imaginaria2;
     cout << "la resta de operar sus numeros complejos es: " << restareal<< "+"<<restaimaginaria<<"i"<<endl;
 }
+#endif

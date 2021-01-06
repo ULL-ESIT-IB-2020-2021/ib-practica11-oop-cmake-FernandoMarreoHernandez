@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
+#pragma once
+#ifndef CLASSES_FUNCTIONS_COMPLEX_H
+#define CLASSES_FUNCTIONS_COMPLEX_H
 using namespace std;
 
 class fecha{
@@ -52,3 +55,4 @@ void fecha::siguientes(ofstream& archivo){
     }
     
 }
+#endif
