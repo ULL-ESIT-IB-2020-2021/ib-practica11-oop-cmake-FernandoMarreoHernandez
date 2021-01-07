@@ -1,7 +1,7 @@
 #include <iostream>
 #pragma once
-#ifndef CLASSES_FUNCTIONS_COMPLEX_H
-#define CLASSES_FUNCTIONS_COMPLEX_H
+#ifndef COMPLEJOS_H
+#define COMPLEJOS_H
 
 using namespace std;
 

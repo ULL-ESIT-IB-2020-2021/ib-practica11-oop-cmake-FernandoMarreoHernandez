@@ -1,0 +1,9 @@
+Suma: 2/4 + 5/6 = 32/24
+Resta: 2/4 - 5/6 = -8/24
+Multiplicación: 2/4 * 5/6 = 10/24
+División: 2/4 : 5/6 = 12/20
+Comparación: 2/4 < 5/6
+
+Media Numerador aproximada en enteros: 3
+Media Denominador aproximada en enteros: 5
+Media de las fracciones: 32/48

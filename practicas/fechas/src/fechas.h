@@ -2,8 +2,8 @@
 #include <cstring>
 #include <fstream>
 #pragma once
-#ifndef CLASSES_FUNCTIONS_COMPLEX_H
-#define CLASSES_FUNCTIONS_COMPLEX_H
+#ifndef FECHAS_H
+#define FECHAS_H
 using namespace std;
 
 class fecha{
