@@ -1,61 +1,71 @@
-#include <iostream>
-#include <cstring>
-#include <fstream>
 #pragma once
-#ifndef CLASSES_FUNCTIONS_COMPLEX_H
-#define CLASSES_FUNCTIONS_COMPLEX_H
-using namespace std;
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+#ifndef RACIONAL_H
+#define RACIONAL_H
 
+class Rationals{
+ private:
+  int numerator_1_{};
+  int numerator_2_{};
+  int denominator_1_{};
+  int denominator_2_{};
+  int result_denominator_{};
+  int result_numerator_{};
 
+ public:
+  Rationals(int, int, int, int);
+  void Add(std::ofstream& archive_write);
+  void Sub(std::ofstream& archive_write);
+  void Mult(std::ofstream& archive_write);
+  void Div(std::ofstream& archive_write);
+  void Compare(std::ofstream& archive_write);
+  void Print(std::ofstream& archive_write);
 
-
-class racional{
-    private:
-        int nume1;
-        int deno1;
-        int nume2;
-        int deno2;
-        int sumrestdeno;
-        int sumnume;
-        int restnume;
-        int mulnume;
-        int muldeno;
-        int divnume;
-        int divdeno;
-    public:
-        racional(int,int,int,int);
-        void mostrarfraccion(ofstream& archivo);
-        void suma(ofstream& archivo);
-        void resta(ofstream& archivo);
-        void multi(ofstream& archivo);
-        void div(ofstream& archivo);
 };
-racional::racional(int nume1_,int deno1_,int nume2_,int deno2_){
-    nume1 = nume1_;
-    deno1 = deno1_;
-    nume2 = nume2_;
-    deno2 = deno2_;
-    sumrestdeno = deno1_ * deno2_;
-}
-void racional::mostrarfraccion(ofstream& archivo){
-    archivo<<nume1<<"/"<<deno1<<" "<<nume2<<"/"<<deno2<<endl;
-}
-void racional::suma(ofstream& archivo){
-    sumnume = deno2 * nume1 + deno1 * nume2;
-    archivo<<nume1<<"/"<<deno1<<" + "<<nume2<<"/"<<deno2<<" = "<<sumnume<<"/"<<sumrestdeno<<endl;
-}
-void racional::resta(ofstream& archivo){
-    restnume = deno2 * nume1 - deno1 * nume2;
-    archivo<<nume1<<"/"<<deno1<<" - "<<nume2<<"/"<<deno2<<" = "<<restnume<<"/"<<sumrestdeno<<endl;
-}
-void racional::multi(ofstream& archivo){
-    mulnume = nume1 * nume2;
-    muldeno = deno1 * deno2;
-    archivo<<nume1<<"/"<<deno1<<" * "<<nume2<<"/"<<deno2<<" = "<<mulnume<<"/"<<muldeno<<endl;
-}
-void racional::div(ofstream& archivo){
-    divnume = nume1 * deno2;
-    divdeno = deno1 * nume2;
-    archivo<<nume1<<"/"<<deno1<<" / "<<nume2<<"/"<<deno2<<" = "<<divnume<<"/"<<divdeno<<endl;
-}
+Rationals::Rationals(int numerator_1, int numerator_2,int denominator_1, int denominator_2){
+  numerator_1_ = numerator_1;
+  numerator_2_ = numerator_2;
+  denominator_1_ = denominator_1;
+  denominator_2_ = denominator_2;
+};
+void Rationals::Add(std::ofstream& archive_write){
+  result_denominator_ = denominator_1_ * denominator_2_;
+  result_numerator_ = (denominator_1_ * numerator_2_) + (denominator_2_ * numerator_1_);
+
+  archive_write << "Suma: " << numerator_1_ << "/" << denominator_1_ << " + " << numerator_2_ << "/" << denominator_2_
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
+};
+void Rationals::Sub(std::ofstream& archive_write){
+  result_denominator_ = denominator_1_ * denominator_2_;
+  result_numerator_ = (denominator_2_ * numerator_1_) - (denominator_1_ * numerator_2_);
+  archive_write << "Resta: " << numerator_1_ << "/" << denominator_1_ << " - " << numerator_2_ << "/" << denominator_2_
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
+};
+void Rationals::Mult(std::ofstream& archive_write){
+  result_numerator_ = numerator_1_ * numerator_2_ ;
+  result_denominator_ = denominator_1_ * denominator_2_ ;
+  archive_write << "Multiplicación: " << numerator_1_ << "/" << denominator_1_ << " * " << numerator_2_ << "/" << denominator_2_
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
+};
+void Rationals::Div(std::ofstream& archive_write){       //Aquí se aplica la regla del caramelo en las funciones
+  result_numerator_ = numerator_1_ * denominator_2_ ;
+  result_denominator_ = denominator_1_ * numerator_2_ ;
+  archive_write << "División: " << numerator_1_ << "/" << denominator_1_ << " : " << numerator_2_ << "/" << denominator_2_
+  << " = " << result_numerator_ << "/" << result_denominator_ <<  std::endl;
+};
+void Rationals::Compare(std::ofstream& archive_write){
+  if(numerator_1_ / denominator_1_ > numerator_2_ / denominator_2_){
+    archive_write << "Comparación: " << numerator_1_ << "/" << denominator_1_ << " > " << numerator_2_ << "/" << denominator_2_ << std::endl << std::endl;
+  }
+  else{
+    archive_write <<  "Comparación: " << numerator_1_ << "/" << denominator_1_ << " < " << numerator_2_ << "/" << denominator_2_ << std::endl << std::endl;
+  }
+};
+
+
+void Usage (int argc, char *argv[]);
+
 #endif

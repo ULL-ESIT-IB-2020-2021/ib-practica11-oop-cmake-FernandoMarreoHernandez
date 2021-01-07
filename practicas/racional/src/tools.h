@@ -1,10 +1,12 @@
-#include <iostream>
-#include <cstring>
-#include <fstream>
 #pragma once
-#ifndef CLASSES_FUNCTIONS_COMPLEX_H
-#define CLASSES_FUNCTIONS_COMPLEX_H
-using namespace std;
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+#ifndef TOOLS_H
+#define TOOLS_H
 
-void usage(int argc, char *argv[]);
+
+void Usage (int argc, char *argv[]);
+
 #endif
